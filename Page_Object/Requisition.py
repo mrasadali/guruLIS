@@ -25,6 +25,8 @@ class Requisition(Common):
     client_select_requistition = (By.ID, "ContentPlaceHolder1_LabsOrderControl_ddlClient")
     referring_provider_requistition = (By.ID, "ContentPlaceHolder1_LabsOrderControl_ddlProvider")
     fasting_requistition = (By.ID, "ContentPlaceHolder1_LabsOrderControl_ddlFasting")
+    prescribed_medication = (By.ID, "SearchTextMed")
+    select_prescribed_medication = (By.ID, "ContentPlaceHolder1_LabsOrderControl_gvPriscribedMed_chkPrescribed_5")
 
     def __init__(self, driver):
         self.driver = driver
@@ -85,7 +87,13 @@ class Requisition(Common):
         return self.dropdown_by_text(self.client_select_requistition, "Demo")
 
     def get_reference_provider(self):
-        return self.dropdown_by_text(self.referring_provider_requistition, "Demo")
+        return self.dropdown_by_text(self.referring_provider_requistition, "Applicable, Not")
 
     def get_fasting_requistition(self):
-        return self.dropdown_by_index(self.fasting_requistition, 2)
+        return self.dropdown_by_text(self.fasting_requistition, "No")
+
+    def get_prescribed_medication(self):
+        return self.sendkey(self.prescribed_medication, "ambien")
+
+    def get_select_prescribed_medication(self):
+        return self.execute_script(self.select_prescribed_medication)

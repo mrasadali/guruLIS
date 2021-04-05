@@ -38,6 +38,8 @@ class TestCase1(BaseClass):
         requisition.get_add_diagnosis()
         selected_diag = requisition.get_selected_diagnosis()
         assert self.selected_diagnosis_text in selected_diag
+        requisition.get_prescribed_medication()
+        requisition.get_select_prescribed_medication()
         time.sleep(5)
 
         # dashboard.Role_Click()

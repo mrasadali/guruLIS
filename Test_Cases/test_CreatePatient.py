@@ -1,7 +1,4 @@
 import time
-
-from selenium.webdriver.support.select import Select
-
 from Page_Object.New_Requistion import New_Patient
 from Utilities.BaseClass import BaseClass
 
