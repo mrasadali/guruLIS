@@ -1,6 +1,5 @@
 import time
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
 from Page_Object.Requisition import Requisition
 from Utilities.BaseClass import BaseClass
 
@@ -37,9 +36,13 @@ class TestCase1(BaseClass):
         requisition.get_diagnosis_search()
         requisition.get_add_diagnosis()
         selected_diag = requisition.get_selected_diagnosis()
+        print(selected_diag)
         assert self.selected_diagnosis_text in selected_diag
         requisition.get_prescribed_medication()
         requisition.get_select_prescribed_medication()
+        # requisition.get_create__button_requisition()
+        # req_num = requisition.get_requisition_no()
+
         time.sleep(5)
 
         # dashboard.Role_Click()

@@ -27,6 +27,8 @@ class Requisition(Common):
     fasting_requistition = (By.ID, "ContentPlaceHolder1_LabsOrderControl_ddlFasting")
     prescribed_medication = (By.ID, "SearchTextMed")
     select_prescribed_medication = (By.ID, "ContentPlaceHolder1_LabsOrderControl_gvPriscribedMed_chkPrescribed_5")
+    requisition_no = (By.ID, "ContentPlaceHolder1_LabsOrderControl_lblReqNo")
+    create_button_requisition = (By.ID, "ContentPlaceHolder1_LabsOrderControl_btnSaveForm")
 
     def __init__(self, driver):
         self.driver = driver
@@ -97,3 +99,9 @@ class Requisition(Common):
 
     def get_select_prescribed_medication(self):
         return self.execute_script(self.select_prescribed_medication)
+
+    def get_create_button_requisition(self):
+        return self.onclick((self.create_button_requisition))
+
+    def get_requisition_no(self):
+        return self.get_element_text(self.requisition_no)

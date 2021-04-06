@@ -27,6 +27,10 @@ class Common:
         element = self.driver.find_element(*locator)
         return self.driver.execute_script("arguments[0].click();", element)
 
+    def execute_script(self, locator):
+        element = self.driver.find_element(*locator)
+        return self.driver.execute_script("arguments[0].click();", element)
+
     def dropdown_by_text(self, locator, text):
         select = Select(WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located(locator)))
         return select.select_by_visible_text(text)
