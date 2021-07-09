@@ -40,8 +40,9 @@ class TestCase1(BaseClass):
         assert self.selected_diagnosis_text in selected_diag
         requisition.get_prescribed_medication()
         requisition.get_select_prescribed_medication()
-        # requisition.get_create__button_requisition()
-        # req_num = requisition.get_requisition_no()
+        requisition.get_create_button_requisition()
+        req_num = requisition.get_requisition_no()
+        print(req_num)
 
         time.sleep(5)
 

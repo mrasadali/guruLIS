@@ -9,7 +9,7 @@ class BaseClass(Common):
     password = "Axg@1101"
     role_selection = (By.XPATH, "//input[@id='SelectRole1_btnSelectRole']")
     # state_patient_loop = "//select[@class='ddlState']/option"
-    selected_diagnosis_text = "A01."
+    selected_diagnosis_text = "A01.0"
 
     def login(self):
         self.driver.find_element(By.ID, "Login1_txtUserName").send_keys(self.username)
